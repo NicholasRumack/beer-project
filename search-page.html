@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="search-page.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Search</title>
 </head>
 <body>
         
     <header>
-
+        <div class="centerBox">
+        <h1>TNS</h1>
+            <nav>
+                <ul>
+                    <li><a href="landing-page.html">Slumpa</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <main>
+        <form>
+			<fieldset>	
 
+			<h1>Söker du efter en specifik öl?</h1>
+			<p>Här kan du skriva in namnet på den öl du söker så får du upp all information du behöver om den. </p>
+				<label>Vad heter ölen du söker efter:<br>
+					<input id="beer" type="text" name="beer"/></label>
+					<button type="button"
+ id="send" onclick="searchBeer()">Sök</button>
+			</fieldset>
+		</form>
+<div id="search"></div>
     </main>
 
     <footer>
