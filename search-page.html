@@ -23,21 +23,22 @@
         </div>
     </header>
     
-    <main>
-        <form>
-			<fieldset>	
-			    <h1>Are you looking for a specific beer?</h1><br>
-			    <p>Here you can enter the name of the beer you are looking for and you will get all the information you need about it.</p><br>
-				    <label><p>What is the name of the beer you are looking for:</p><br>
-					    <input id="beer" type="text" name="beer"/></label>
-					    <button type="button"
-                        id="send" onclick="searchBeer()">Search</button>
-			</fieldset>
-        </form>
-        
-        <div id="search"></div>
+    <main class="searchmain">
+        <fieldset class="fieldform">
+            <form>
+                <h1>Are you looking for a specific beer?</h1><br>
+                    <p>Here you can enter the name of the beer you are looking for and you will get all the information you need about it.</p><br>
+                <label for="beerElement">Search for beer:</label><br>
+                <input type="text" name="beerElement"><br>
+                <input type="submit" value="Sök">
+            </form>
+        </fieldset>
 
+        <section id="searchresults"></section>
     </main>
+
+    
+
 
     <footer>
         <p> &copy; Copyright Tim, Nicholas & Sara</p>

@@ -18,16 +18,7 @@ nav {
     padding: 10px;
 }
 
-form {
-    box-sizing: border-box;
-    width: 20%;
-    margin: 50px;
-}
-form h1 {
-    text-align: center;
-}
-
-li {
+nav > ul >li {
     list-style-type: none;
     display: inline;
 }
@@ -46,3 +37,28 @@ footer {
      text-align: center;
      padding-top: 200px;
  }
+
+.fieldform{
+    width: 25%;
+    margin-top: 5rem;
+}
+
+.fieldform > form {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 50px;
+}
+.fieldform > form h1 {
+    text-align: center;
+}
+
+.searchmain{
+    display: flex;
+    justify-content: left;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+#searchresults{
+    padding: 5rem;
+}
