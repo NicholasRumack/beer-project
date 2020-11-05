@@ -7,14 +7,18 @@ formElement.addEventListener('submit', onSubmit);
 function onSubmit(evt) {
     
     const searchStr = evt.target[0].value;
-
-    console.log(searchStr);
-
     const url = `${api}?beer_name=${searchStr}`;
     //const url = api + "?beer_name" + searchStr; samma syntax som raden ovan
 
     getData(url, renderFirstBeer);
     evt.preventDefault();
+}
+
+function removeAllChildNodes(parent) {
+    
+    while (parent.firstChild) {      
+        parent.removeChild(parent.firstChild);
+    }
 }
 
 function getData(url, callback) {
@@ -34,15 +38,16 @@ function renderFirstBeer(data) {
     for (let i = 0; i < data.length; i++) {
        
         const beer = data[i];
-        
         const liElement = document.createElement('li');
         liElement.setAttribute('name', beer.id)
         liElement.textContent = beer.name;
 
         ulElement.appendChild(liElement); //lägger li i ul med appendchild
+        
     }
     
     sectionElement.appendChild(ulElement);
+    removeAllChildNodes(sectionElement);
 }
 
 /*
