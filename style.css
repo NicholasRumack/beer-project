@@ -4,6 +4,43 @@
     margin: 0;
 }
 
+.gridHeader{
+    display: grid;
+    grid-template-rows: repeat(autofill, 250px);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: 
+    "one two"
+    "one three";
+  }
+
+  .box1{
+    grid-area: one;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 50%);
+  }
+
+  .box2{
+    grid-area: two;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+  }
+
+  .box2 p {
+      color: whitesmoke;
+      text-align: center;
+  }
+
+  .box3{
+    grid-area: three;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: lightgray;
+  }
+
 header h1 {
     font-size: 50px;
     letter-spacing: 2px;
@@ -11,7 +48,6 @@ header h1 {
 }
 nav {
     box-sizing: border-box;
-    width: 50%;
     word-spacing: 50px;
     text-align: center;
     border: 1px solid black;
