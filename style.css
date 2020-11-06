@@ -48,7 +48,6 @@ header h1 {
 }
 nav {
     box-sizing: border-box;
-    width: 50%;
     word-spacing: 50px;
     text-align: center;
     border: 1px solid black;
