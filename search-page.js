@@ -12,6 +12,7 @@ function onSubmit(evt) {
 
     getData(url, renderFirstBeer);
     evt.preventDefault();
+    removeAllChildNodes(sectionElement);
 }
 
 function removeAllChildNodes(parent) {
@@ -47,7 +48,6 @@ function renderFirstBeer(data) {
     }
     
     sectionElement.appendChild(ulElement);
-    removeAllChildNodes(sectionElement);
 }
 
 /*
