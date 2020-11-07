@@ -1,18 +1,27 @@
 const api = 'https://api.punkapi.com/v2/beers';
 const formElement = document.querySelector('form');
 const sectionElement = document.getElementById('searchresults');
+const first = document.querySelector(".first");
+const previous = document.querySelector(".previous");
+const next = document.querySelector(".next");
+
+const page = "&page=" + pageValue;
+let pageValue = 1;
 
 formElement.addEventListener('submit', onSubmit);
+
 
 function onSubmit(evt) {
     
     const searchStr = evt.target[0].value;
-    const url = `${api}?beer_name=${searchStr}`;
-    //const url = api + "?beer_name" + searchStr; samma syntax som raden ovan
+    const url = `${api}?beer_name=${searchStr}${page}&per_page=10`;
+    //const url = api + "?beer_name" + searchStr; 
+    //samma syntax som raden ovan
 
     getData(url, renderFirstBeer);
     evt.preventDefault();
     removeAllChildNodes(sectionElement);
+    console.log(url);
 }
 
 function removeAllChildNodes(parent) {
@@ -48,6 +57,7 @@ function renderFirstBeer(data) {
     }
     
     sectionElement.appendChild(ulElement);
+
 }
 
 /*

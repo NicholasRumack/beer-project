@@ -72,6 +72,8 @@ footer {
      padding-top: 200px;
  }
 
+
+ /*searchpage styling*/
 .fieldform{
     width: 25%;
     margin-top: 5rem;
@@ -87,15 +89,33 @@ footer {
 }
 
 .searchmain{
-    display: flex;
-    justify-content: left;
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 700px; 
+    column-gap: 10px;
+    row-gap: 15px;
     padding-left: 5rem;
     padding-bottom: 2rem;
 }
 
 #searchresults{
-    padding: 5rem;
+    margin: 5rem 2rem 2rem 2rem;
 }
+
+.seachButtons{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+}
+
+.first,.previous,.next{
+    cursor: pointer;
+    background: grey;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
 /*Beer Info Grid*/
 .beerinfogrid {
     display: grid;
