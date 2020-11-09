@@ -9,7 +9,21 @@ let number = 1;
 //const page = "&page=" + 'pageValue';
 //let pageValue = 1;
 formElement.addEventListener('submit', onSubmit);
+
+
+
+next.addEventListener('click', () => {
+    number == number.length < 1 ? (number = 1) : (number += 1);
+    //number.length ska såklart vara antalet li
+    
+    for (let i = number; i < number + 1; i++){
+        
+        console.log(number);
+    }
+    
+});
  
+
 function onSubmit(evt) {
     
     const searchStr = evt.target[0].value;
@@ -52,7 +66,7 @@ function renderFirstBeer(data) {
         liElement.setAttribute('name', beer.id)
         liElement.textContent = beer.name;
  
-        ulElement.appendChild(liElement); //lägger li i ul med appendchild
+        ulElement.appendChild(liElement); 
         
     }
     
