@@ -19,6 +19,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(1, 50%);
+    background-color: whitesmoke;
   }
 
   .box2{
@@ -30,8 +31,8 @@
   }
 
   .box2 p {
-      color: whitesmoke;
-      text-align: center;
+    color: whitesmoke;
+    text-align: center;
   }
 
   .box3{
@@ -155,6 +156,26 @@ footer p {
     background: grey;
     margin-top: 2rem;
     text-align: center;
+}
+
+/*Randompage styling*/
+.randomBeer {
+    border-style: solid;
+    border-color: lightslategray;
+    padding-left: 30px;
+    width: 25%;
+    margin: 20px;
+}
+
+.randomBeer p {
+    margin: 40px;
+}
+
+.random {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 150px;
 }
 
 
