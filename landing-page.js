@@ -1,34 +1,56 @@
-const api = `https://api.punkapi.com/v2/beers/random`;
-const randomBtn = document.querySelector ("random")
-const card = document.querySelector ("randomCard")
+const api = `https://api.punkapi.com/v2/beers`;
+const searchParams = new URLSearchParams(window.location.search);
+const randomBtn = document.querySelector (".random")
+const card = document.querySelector (".randomCard")
+
+function removeAllChildNodes(parent) {
+    
+    while (parent.firstChild) {      
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 function getData(url, callback) {  // hämtar api och gör om till json
     fetch(url)
     .then(res => res.json())
     .then(data => {
-    // console.log(data)
-    // callback(data);
+
+     callback(data);
     })
     .catch(error => console.log(error));
 }
 
-randomBtn.addEventListener('click', randomClick);
+randomBtn.addEventListener('click', clickRandom);
 
-function randomClick(data) {
+function  clickRandom(evt) {
+const url = `${api}/random`;
+
+removeAllChildNodes(card)
+
+getData(url, infoCard)
+
+evt.preventDefault();
+}
+
+function infoCard (data) {
+    const beer = data [0] 
+    h2Element = document.createElement("h2")
+    pElement = document.createElement("p")
+
+    beerImg = new Image (54.4, 212.2);
+    beerImg.src = beer.image_url;
     
-    const ulElement = document.createElement('div');
- 
-    for (let i = 0; i < data.length; i++) {
-       
-        const beer = data[i];
-        const liElement = document.createElement('h2');
-        liElement.setAttribute('name', beer.id)
-        liElement.textContent = beer.name;
- 
-        ulElement.appendChild(liElement); 
-        
-    }
-    
-    sectionElement.appendChild(ulElement);
-    card.appendChild(ulElement)
+    h2Element.textContent = beer.name
+    //h2Element.setatribute(`name`,beer.id)
+    pElement.textContent = "See more info "
+
+    card.appendChild(h2Element)
+    card.appendChild(pElement)
+    card.appendChild(beerImg)
+}
+
+function infoPage (evt) {
+    const id = evt.target.getAtribute(`name`);
+    const url = `info-page.html?name=${id}`;
+    document.location.href=url 
 }
