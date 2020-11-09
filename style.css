@@ -4,7 +4,6 @@
     margin: 0;
 }
 
-
 /*Basen på alla sidor*/
 .gridHeader{
     display: grid;
@@ -69,7 +68,7 @@ footer {
 footer p {
      color: whitesmoke;
      text-align: center;
-     padding-top: 200px;
+     padding-top:100px;
 }
 
  /*Index styling*/
@@ -118,23 +117,23 @@ footer p {
 
  /*searchpage styling*/
 .fieldform{
-    width: 25%;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .fieldform > form {
     box-sizing: border-box;
-    width: 80%;
-    margin: 50px;
+    width: 100%;
+
 }
 .fieldform > form h1 {
     text-align: center;
+
 }
 
 .searchmain{
     display: grid;
     grid-template-columns: 400px 400px 400px;
-    grid-template-rows: 700px; 
+    grid-template-rows: 400px; 
     column-gap: 10px;
     row-gap: 15px;
     padding-left: 5rem;
@@ -142,7 +141,7 @@ footer p {
 }
 
 #searchresults{
-    margin: 5rem 2rem 2rem 2rem;
+    margin: 2rem 2rem 2rem 2rem;
 }
 
 .seachButtons{
@@ -154,7 +153,7 @@ footer p {
 .first,.previous,.next{
     cursor: pointer;
     background: grey;
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: center;
 }
 

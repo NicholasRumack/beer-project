@@ -4,8 +4,8 @@ const sectionElement = document.getElementById('searchresults');
 const first = document.querySelector(".first");
 const previous = document.querySelector(".previous");
 const next = document.querySelector(".next");
-let number = 1;
 
+let number = 1;
 //const page = "&page=" + 'pageValue';
 //let pageValue = 1;
 formElement.addEventListener('submit', onSubmit);
@@ -13,8 +13,7 @@ formElement.addEventListener('submit', onSubmit);
 function onSubmit(evt) {
     
     const searchStr = evt.target[0].value;
-    
- 
+
     url = `${api}?beer_name=${searchStr}&page=${number}&per_page=10`;
     //const url = `${api}?beer_name=${searchStr}${page}&per_page=10`;
     //const url = api + "?beer_name" + searchStr; 
