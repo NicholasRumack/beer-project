@@ -15,50 +15,52 @@ function getBeerInfo() {
         console.log('beer data >>>' + JSON.stringify());
         removeAllChildNodes(detailsElement);
     
-        const height = character.height;
-        const mass = character.mass;
-        const hair_color = character.hair_color;
-        const skin_color = character.skin_color;
-        const eye_color = character.eye_color;
-        const birth_year = character.birth_year;
-        const gender = character.gender;
+        const image_url = .image_url;
+        const beerName = .name;
+        const abv = .abv;
+        const volume = .volume;
+        const hops = .hops;
+        const description = .birth_year;
+        const ingredients = .ingredients;
+        const food_pairing = .food_pairing;
+        const brewers_tips = .brewers_tips;
 
         const h2Tag  = document.createElement('h2');
-        const pTagHeight  = document.createElement('p');
-        const pTagMass  = document.createElement('p');
-        const pTagHair_Color  = document.createElement('p');
-        const pTagSkin_Color  = document.createElement('p');
-        const pTagEye_Color  = document.createElement('p');
-        const pTagBirth_Year  = document.createElement('p');
-        const pTagGender  = document.createElement('p');
+        const pTagAlcoholeByVolume  = document.createElement('p');
+        const pTagVolume  = document.createElement('p');
+        const pTagHops  = document.createElement('p');
+        const pTagDescription  = document.createElement('p');
+        const pTagIngredients  = document.createElement('p');
+        const pTagFoodPairing  = document.createElement('p');
+        const pTagBrewersTips  = document.createElement('p');
 
+        const img = document.createTextNode('Image:' + ' ' + image_url);
         const h2Node = document.createTextNode(str);
-        const pHeightNode = document.createTextNode('Description:' + ' ' + height);
-        const pMassNode = document.createTextNode('Image:' + ' ' + mass);
-        const pHair_ColorNode = document.createTextNode('Alcohol by volume:' + ' ' + hair_color);
-        const pSkin_ColorNode = document.createTextNode('Volume:' + ' ' + skin_color);
-        const pEye_ColorNode = document.createTextNode('Ingredients:' + ' ' + eye_color);
-        const pBirth_YearNode = document.createTextNode('Hops:' + ' ' + birth_year);
-        const pGenderNode = document.createTextNode('Food pairing:' + ' ' + gender);
-        const pGenderNode = document.createTextNode('Brewers tips:' + ' ' + gender);
+        const pAlcoholeByVolumeNode = document.createTextNode('Alcohol by volume:' + ' ' + abv);
+        const pVolumeNode = document.createTextNode('Volume:' + ' ' + volume);
+        const pHopsNode = document.createTextNode('Hops:' + ' ' + hops);
+        const pDescriptionNode = document.createTextNode('Description:' + ' ' + description);
+        const pIngredientsNode = document.createTextNode('Ingredients:' + ' ' + ingredients);
+        const pFoodPairingNode = document.createTextNode('Food pairing:' + ' ' + food_pairing);
+        const pBrewersTipsNode = document.createTextNode('Brewers tips:' + ' ' + brewers_tips);
 
         h2Tag.appendChild(h2Node);
-        pTagHeight.appendChild(pHeightNode);
-        pTagMass.appendChild(pMassNode);
-        pTagHair_Color.appendChild(pHair_ColorNode);
-        pTagSkin_Color.appendChild(pSkin_ColorNode);
-        pTagEye_Color.appendChild(pEye_ColorNode);
-        pTagBirth_Year.appendChild(pBirth_YearNode);
-        pTagGender.appendChild(pGenderNode);
+        pTagAlcoholeByVolume.appendChild(pAlcoholeByVolumeNode);
+        pTagVolume.appendChild(pVolumeNode);
+        pTagHops.appendChild(pHopsNode);
+        pTagDescription.appendChild(pDescriptionNode);
+        pTagIngredients.appendChild(pIngredientsNode);
+        pTagFoodPairing.appendChild(pFoodPairingNode);
+        pTagBrewersTips.appendChild(pBrewersTipsNode);
 
         detailsElement.appendChild(h2Tag);
-        detailsElement.appendChild(pTagHeight);
-        detailsElement.appendChild(pTagMass);
-        detailsElement.appendChild(pTagHair_Color);
-        detailsElement.appendChild(pTagSkin_Color);
-        detailsElement.appendChild(pTagEye_Color);
-        detailsElement.appendChild(pTagBirth_Year);
-        detailsElement.appendChild(pTagGender);
+        detailsElement.appendChild(pTagAlcoholeByVolume);
+        detailsElement.appendChild(pTagVolume);
+        detailsElement.appendChild(pTagHops);
+        detailsElement.appendChild(pTagDescription);
+        detailsElement.appendChild(pTagIngredients);
+        detailsElement.appendChild(pTagFoodPairing);
+        detailsElement.appendChild(pTagBrewersTips);
 
     }
 
