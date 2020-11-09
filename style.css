@@ -180,7 +180,7 @@ footer p {
 
 
 /*Beer Info Grid*/
-.beerinfogrid {
+.beerInfoGrid {
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(5, auto);
