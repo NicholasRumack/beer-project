@@ -63,15 +63,13 @@ function renderFirstBeer(data) {
     }
     
     sectionElement.appendChild(ulElement);
- 
+    ulElement.addEventListener("click",infoPage);
 }
  
-/*
-function onUlClicked(evt) {
+
+function infoPage(evt) {
     
     const id = evt.target.getAttribute('name');
- 
-    const url = `./myView.html?name=${id}`;
-    document.location.href = url;
+    const url = `info-page.html?name=${id}`;
+    document.location.href=url 
 }
-*/
