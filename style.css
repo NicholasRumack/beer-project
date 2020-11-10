@@ -162,32 +162,40 @@ footer p {
 .randomFlex {
   display: flex;
   justify-content: space-evenly;
+  
 }
 
 .randomBeer {
-    border-style: solid;
-    border-color: lightslategray;
-    padding-left: 30px;
-    width: 25%;
-    margin: 20px;
+  border-style: solid;
+  border-color: lightslategray;
+  padding: 30px;
+  margin: 20px;
 }
 
 .randomBeer p {
-    margin: 40px;
+  margin: 40px;
+}
+
+.flexBox {
+  width: 500px;
+  max-width: 1000px;
+}
+
+.hidden {
+  display: none;
 }
 
 .random {
-    margin-left: 50px;
-    margin-bottom: 20px;
-    height: 40px;
-    width: 150px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  height: 40px;
+  width: 150px;
 }
 
 .randomCard {
   border-style: solid;
   border-color: lightslategray;
-  padding-left: 30px;
-  width: 25%;
+  padding: 40px;
   margin: 20px;
 }
 
