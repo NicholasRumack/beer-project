@@ -117,45 +117,70 @@ footer p {
 }
 
  /*searchpage styling*/
-.fieldform{
-    margin-top: 2rem;
-}
-
-.fieldform > form {
-    box-sizing: border-box;
-    width: 100%;
-
-}
-.fieldform > form h1 {
-    text-align: center;
-
-}
-
 .searchmain{
     display: grid;
-    grid-template-columns: 400px 400px 400px;
-    grid-template-rows: 400px; 
+    grid-template-columns: 25% 37.5% 37.5%;
+    grid-template-rows: 300px 300px; 
+    grid-template-areas: "a b b"
+                         "a c c";
     column-gap: 10px;
     row-gap: 15px;
     padding-left: 5rem;
     padding-bottom: 2rem;
 }
 
-#searchresults{
-    margin: 2rem 2rem 2rem 2rem;
+.fieldform{
+  margin-top: 2rem;
+  grid-area: a;
 }
 
-.seachButtons{
-    background-color: black;
-    height: 100px;
-    width: 100px;
+.fieldform > form {
+  box-sizing: border-box;
+  width: 100%;
+
+}
+.fieldform > form h1 {
+  text-align: center;
+
+}
+
+#searchresults{
+    margin: 2rem 2rem 2rem 2rem;
+    grid-area: b;
+    display: flex row;
+    column-count: 2;
+}
+
+#searchresults > ul > li{
+    margin-right: 0;
+    height: 35px;
+    padding-left: 3px;
+}
+
+#searchresults > ul > li::marker{
+  content: "🍺";
+}
+
+.searchButtons{
+    grid-area: c;
+    justify-self: center;
+    display: flex;
 }
 
 .first,.previous,.next{
+    width: 100px;
+    height: 30px;
     cursor: pointer;
-    background: grey;
-    margin-top: 2rem;
     text-align: center;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+  
+
+.first:hover,.previous:hover,.next:hover{
+    background-color: #555555;
+    color: white;
 }
 
 /*Landingpage styling*/
