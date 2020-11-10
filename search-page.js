@@ -6,11 +6,8 @@ const previous = document.querySelector(".previous");
 const next = document.querySelector(".next");
 
 let number = 1;
-//const page = "&page=" + 'pageValue';
-//let pageValue = 1;
+
 formElement.addEventListener('submit', onSubmit);
-
-
 
 next.addEventListener('click', () => {
     number == number.length < 1 ? (number = 1) : (number += 1);
@@ -20,18 +17,13 @@ next.addEventListener('click', () => {
         
         console.log(number);
     }
-    
 });
  
-
 function onSubmit(evt) {
     
     const searchStr = evt.target[0].value;
 
     url = `${api}?beer_name=${searchStr}&page=${number}&per_page=10`;
-    //const url = `${api}?beer_name=${searchStr}${page}&per_page=10`;
-    //const url = api + "?beer_name" + searchStr; 
-    //samma syntax som raden ovan
  
     getData(url, renderFirstBeer);
     evt.preventDefault();

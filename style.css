@@ -158,7 +158,12 @@ footer p {
     text-align: center;
 }
 
-/*Randompage styling*/
+/*Landingpage styling*/
+.randomFlex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .randomBeer {
     border-style: solid;
     border-color: lightslategray;
@@ -178,6 +183,13 @@ footer p {
     width: 150px;
 }
 
+.randomCard {
+  border-style: solid;
+  border-color: lightslategray;
+  padding-left: 30px;
+  width: 25%;
+  margin: 20px;
+}
 
 /*Beer Info Grid*/
 .beerInfoGrid {
