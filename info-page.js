@@ -1,10 +1,11 @@
+const api = 'https://api.punkapi.com/v2/beers';
+const detailsElement = document.querySelector('section.beerInfoGrid > div');
+
+let beer = [];
 
 
 
-
-
-
-function getBeerInfo() {
+function getBeerInfo(beer) {
     let str = beer.name;
 
     const divElement = document.createElement('div');
