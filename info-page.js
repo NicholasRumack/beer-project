@@ -1,21 +1,36 @@
 const api = 'https://api.punkapi.com/v2/beers';
 const detailsElement = document.querySelector('section.beerInfoGrid > div');
+const searchParams = new URLSearchParams(window.location.search);
+const id = searchParams.get('name');
+const url = `${api}/${id}`;
 
 let beer = [];
 
+getData(url, getBeerInfo)
 
+function getData(url, callback) {
+    
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        callback(data);
+    })
+    .catch(error => console.log(error));
+    
+}
 
-function getBeerInfo(beer) {
+function getBeerInfo(data) {
+    const beer = data[0];
     let str = beer.name;
 
     const divElement = document.createElement('div');
     const pElement = document.createElement('p');
     pElement.innerText = str;
 
-    pElement.onclick = function() {
+    /*pElement.onclick = function() {
         console.log('beer data >>>' + JSON.stringify(beer));
         removeAllChildNodes(detailsElement);
-    
+    */
         const image_url = beer.image_url;
         const abv = beer.abv;
         const volume = beer.volume;
@@ -64,11 +79,13 @@ function getBeerInfo(beer) {
         detailsElement.appendChild(pTagFoodPairing);
         detailsElement.appendChild(pTagBrewersTips);
 
+
+        divElement.appendChild(pElement);
     }
 
-    divElement.appendChild(pElement);
-
-    return divElement;
     
-}
+
+   
+    
+
 
