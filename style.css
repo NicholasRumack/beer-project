@@ -137,11 +137,10 @@ footer p {
 .fieldform > form {
   box-sizing: border-box;
   width: 100%;
-
 }
+
 .fieldform > form h1 {
   text-align: center;
-
 }
 
 #searchresults{

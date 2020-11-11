@@ -4,24 +4,37 @@ const sectionElement = document.getElementById('searchresults');
 const first = document.querySelector(".first");
 const previous = document.querySelector(".previous");
 const next = document.querySelector(".next");
+let searchStr;
+let nextUrl;
 
 let number = 1;
 
 formElement.addEventListener('submit', onSubmit);
 
 next.addEventListener('click', () => {
+
+   removeAllChildNodes(sectionElement);
+
     number == number.length < 1 ? (number = 1) : (number += 1);
-    //number.length ska såklart vara antalet li
-    
-    for (let i = number; i < number + 1; i++){
-        
-        console.log(number);
-    }
+
+    nextUrl = `${api}?beer_name=${searchStr}&page=${number}&per_page=10`
+    getData(nextUrl,renderFirstBeer);
 });
+
+previous.addEventListener('click', () => {
+
+    removeAllChildNodes(sectionElement);
  
+     number == number.length < 1 ? (number = 1) : (number -= 1);
+ 
+     nextUrl = `${api}?beer_name=${searchStr}&page=${number}&per_page=10`
+     getData(nextUrl,renderFirstBeer);
+ });
+
+ /*till listan*/
 function onSubmit(evt) {
     
-    const searchStr = evt.target[0].value;
+    searchStr = evt.target[0].value;
 
     url = `${api}?beer_name=${searchStr}&page=${number}&per_page=10`;
  
@@ -46,7 +59,8 @@ function getData(url, callback) {
     })
     .catch(error => console.log(error));
 }
- 
+
+ /*Lista*/
 function renderFirstBeer(data) {
     
     const ulElement = document.createElement('ul');
@@ -66,9 +80,8 @@ function renderFirstBeer(data) {
     ulElement.addEventListener("click",infoPage);
 }
  
-
+/*Länkar till infosidan*/
 function infoPage(evt) {
-    
     const id = evt.target.getAttribute('name');
     const url = `info-page.html?name=${id}`;
     document.location.href=url 
