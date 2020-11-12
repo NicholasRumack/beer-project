@@ -35,26 +35,27 @@ evt.preventDefault();
 function infoCard (data) {
     const beer = data [0] 
     h2Element = document.createElement("h2")
-    pElement = document.createElement("p")
+    btnElement = document.createElement("button")
+    btnElement.classList.add('btnInfoCard');
 
     beerImg = new Image (54.4, 212.2);
     beerImg.src = beer.image_url;
     
     h2Element.textContent = beer.name
-    pElement.setAttribute('name',beer.id)
-    pElement.textContent = "See more info "
+    btnElement.setAttribute('name',beer.id)
+    btnElement.textContent = "See more info "
 
     card.appendChild(h2Element)
-    card.appendChild(pElement)
     card.appendChild(beerImg)
+    card.appendChild(btnElement)
 
     card.classList.remove("hidden");
 
-    pElement.addEventListener("click",infoPage);
+    btnElement.addEventListener("click",infoPage);
 }
 
 function infoPage (evt) {
-    const id = pElement.getAttribute("name");
+    const id = btnElement.getAttribute("name");
     const url = `info-page.html?name=${id}`;
     document.location.href=url 
 }
