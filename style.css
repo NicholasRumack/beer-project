@@ -5,6 +5,13 @@
 }
 
 /*Basen på alla sidor*/
+
+.beerLogo{
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+}
+
 .gridHeader{
     display: grid;
     grid-template-rows: repeat(autofill, 250px);
