@@ -20,6 +20,24 @@ function getData(url, callback) {
 function getBeerInfo(data) {
     const beer = data[0];
     let str = beer.name;
+    let ingredientsInfo = beer.ingredients
+    let hopsIn = ingredientsInfo.hops
+
+    for (let i = 0; i < hopsIn.length; i++) {
+        const hopsInfo = hopsIn[i];
+
+        let hops = "Hops: " + `${hopsInfo.name}: ${hopsInfo.amount.value}: ${hopsInfo.amount.unit}`;
+        pTagHops  = document.createElement('p');
+        pHopsNode = document.createTextNode(hops);
+        pTagHops.appendChild(pHopsNode);
+    }
+
+    let volumeIn = beer.boil_volume;
+    for (let i = 0; i < volumeIn.length; i++) {
+        const volumeInfo = volumeIn[i];
+        let str = `${volumeInfo.name}: ${volumeInfo.amount.value}`
+        console.log(str)
+    }
 
     const divElement = document.createElement('div');
     const pElement = document.createElement('p');
@@ -38,7 +56,6 @@ function getBeerInfo(data) {
     const h2Tag  = document.createElement('h2');
     const pTagAlcoholeByVolume  = document.createElement('p');
     const pTagVolume  = document.createElement('p');
-    const pTagHops  = document.createElement('p');
     const pTagDescription  = document.createElement('p');
     const pTagIngredients  = document.createElement('p');
     const pTagFoodPairing  = document.createElement('p');
@@ -48,7 +65,6 @@ function getBeerInfo(data) {
     const h2Node = document.createTextNode(str);
     const pAlcoholeByVolumeNode = document.createTextNode(abv);
     const pVolumeNode = document.createTextNode(volume);
-    const pHopsNode = document.createTextNode(hops);
     const pDescriptionNode = document.createTextNode(description);
     const pIngredientsNode = document.createTextNode(ingredients);
     const pFoodPairingNode = document.createTextNode(food_pairing);
@@ -58,7 +74,6 @@ function getBeerInfo(data) {
     h2Tag.appendChild(h2Node);
     pTagAlcoholeByVolume.appendChild(pAlcoholeByVolumeNode);
     pTagVolume.appendChild(pVolumeNode);
-    pTagHops.appendChild(pHopsNode);
     pTagDescription.appendChild(pDescriptionNode);
     pTagIngredients.appendChild(pIngredientsNode);
     pTagFoodPairing.appendChild(pFoodPairingNode);
