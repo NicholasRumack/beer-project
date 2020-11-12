@@ -26,7 +26,7 @@ function getBeerInfo(data) {
     pElement.innerText = str;
 
     const image = "" + beer.image_url;
-    const abv = "Alcohole by volume: " + beer.abv;
+    const abv = "Alcohol by volume: " + beer.abv;
     const volume = "Volume: " + beer.volume;
     const hops = "Hops: " + beer.hops;
     const description = "Description: " + beer.description;
