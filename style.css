@@ -199,10 +199,11 @@ footer p {
   grid-area: b;
   display: flex row;
   column-count: 2;
+  min-height: 300px;
 }
 
 #searchresults > ul > li{
-display: flex;
+  display: flex;
   margin-bottom: 10px;
   height: 35px;
   padding-left: 3px;
@@ -221,6 +222,7 @@ display: flex;
 #searchresults > ul > li:hover{
   background-color: #555555;
   color: white;
+  cursor: pointer;
 }
 
 .searchButtons{
@@ -229,7 +231,8 @@ display: flex;
     display: flex;
 }
 
-.first,.previous,.next{
+.previous,.next{
+    margin-top: 20px;
     width: 100px;
     height: 30px;
     cursor: pointer;
