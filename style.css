@@ -206,6 +206,8 @@ display: flex;
   margin-bottom: 10px;
   height: 35px;
   padding-left: 3px;
+  padding-top: 10px;
+  padding-left: 10px;
   font-size: 13px;
   list-style-type: none;
   align-content: start;   
