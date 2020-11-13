@@ -17,50 +17,38 @@ function getData(url, callback) {
 
 function getBeerInfo(data) {
     const beer = data[0];
+    console.log(beer)
 
     let str = beer.name;
-    let ingredientsInfo = beer.ingredients
-    let hopsIn = ingredientsInfo.hops
-
-    for (let i = 0; i < hopsIn.length; i++) {
-        const hopsInfo = hopsIn[i];
-
-        let hops = "Hops: " + `${hopsInfo.name}: ${hopsInfo.amount.value}: ${hopsInfo.amount.unit}`;
-        pTagHops  = document.createElement('p');
-        pHopsNode = document.createTextNode(hops);
-        pTagHops.appendChild(pHopsNode);
-    }
-
     let bVolume = beer.boil_volume
     let volume = 'Volume: ' + bVolume.value + " " + bVolume.unit;
 
     const pElement = document.createElement('p');
     pElement.innerText = str;
 
-console.log(beer)
     const abv = "Alcohol by volume: " + beer.abv +"%";
     const description = beer.description;
+    
     let ingredients = "Ingredients: ";  
     
-
     ingredients += 'Hops: '
     for (let i = 0; i < beer.ingredients.hops.length; i++) {
         const hop = beer.ingredients.hops[i];
         ingredients += hop.name + ", ";
-        
     }
 
     ingredients += 'Malt: '
     for (let i = 0; i < beer.ingredients.malt.length; i++) {
         const m = beer.ingredients.malt[i];
         ingredients += m.name + ", ";
-        
     }
+
+    ingredients += 'Yeast: ' + beer.ingredients.yeast
+
     const food_pairing = "Food pairing: " + beer.food_pairing;
     const brewers_tips = "Brewers tips: " + beer.brewers_tips;
     beerImg = new Image (54.4, 212.2);
     beerImg.src = beer.image_url;
-
 
     const h2Tag  = document.createElement('h2');
     const pTagAlcoholeByVolume  = document.createElement('p');
@@ -109,7 +97,6 @@ console.log(beer)
     divBeerName.appendChild(h2Tag);
     divAlcoholByVolume.appendChild(pTagAlcoholeByVolume);
     divVolume.appendChild(pTagVolume);
-    divHops.appendChild(pTagHops);
     divBeerDesc.appendChild(pTagDescription);
     divBeerInfo.appendChild(pTagIngredients);
     divfoodPairing.appendChild(pTagFoodPairing);
