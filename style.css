@@ -195,20 +195,29 @@ footer p {
 }
 
 #searchresults{
-    margin: 2rem 2rem 2rem 2rem;
-    grid-area: b;
-    display: flex row;
-    column-count: 2;
+  margin: 2rem 2rem 2rem 2rem;
+  grid-area: b;
+  display: flex row;
+  column-count: 2;
 }
 
 #searchresults > ul > li{
-    margin-right: 0;
-    height: 35px;
-    padding-left: 3px;
+display: flex;
+  margin-bottom: 10px;
+  height: 35px;
+  padding-left: 3px;
+  list-style-type: none;
+  align-content: start;   
+  text-align: center;
+  border: 2px solid #555555;
 }
 
-#searchresults > ul > li::marker{
+/* #searchresults > ul > li::marker{
   content: "🍺";
+} */
+#searchresults > ul > li:hover{
+  background-color: #555555;
+  color: white;
 }
 
 .searchButtons{
