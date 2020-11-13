@@ -21,15 +21,15 @@ function getBeerInfo(data) {
 
     let str = beer.name;
     let bVolume = beer.boil_volume
-    let volume = 'Volume: ' + bVolume.value + " " + bVolume.unit;
+    let volume = bVolume.value + " " + bVolume.unit;
 
     const pElement = document.createElement('p');
     pElement.innerText = str;
 
-    const abv = "Alcohol by volume: " + beer.abv +"%";
+    const abv = beer.abv +"%";
     const description = beer.description;
     
-    let ingredients = "Ingredients: ";  
+    let ingredients = "";  
     
     ingredients += 'Hops: '
     for (let i = 0; i < beer.ingredients.hops.length; i++) {
@@ -45,10 +45,23 @@ function getBeerInfo(data) {
 
     ingredients += 'Yeast: ' + beer.ingredients.yeast
 
-    const food_pairing = "Food pairing: " + beer.food_pairing;
-    const brewers_tips = "Brewers tips: " + beer.brewers_tips;
+    const food_pairing = beer.food_pairing;
+    const brewers_tips = beer.brewers_tips;
     beerImg = new Image (54.4, 212.2);
     beerImg.src = beer.image_url;
+
+    let h3abv = document.createElement("h3");
+    h3abv.innerHTML = "Alcohol by volume";
+    let h3Volume = document.createElement("h3");
+    h3Volume.innerHTML = "Volume";
+    let h3Hops = document.createElement("h3");
+    h3Hops.innerHTML = "Hops";
+    let h3BeerInfo = document.createElement("h3");
+    h3BeerInfo.innerHTML = "Ingredients";
+    let h3FoodPairing = document.createElement("h3");
+    h3FoodPairing.innerHTML = "Food pairing";
+    let h3BrewersTips = document.createElement("h3");
+    h3BrewersTips.innerHTML = "Brewers tips";
 
     const h2Tag  = document.createElement('h2');
     const pTagAlcoholeByVolume  = document.createElement('p');
@@ -58,7 +71,6 @@ function getBeerInfo(data) {
     const pTagFoodPairing  = document.createElement('p');
     const pTagBrewersTips  = document.createElement('p');
 
-
     const h2Node = document.createTextNode(str);
     const pAlcoholeByVolumeNode = document.createTextNode(abv);
     const pVolumeNode = document.createTextNode(volume);
@@ -67,7 +79,6 @@ function getBeerInfo(data) {
     const pFoodPairingNode = document.createTextNode(food_pairing);
     const pBrewersTipsNode = document.createTextNode(brewers_tips);
 
-
     h2Tag.appendChild(h2Node);
     pTagAlcoholeByVolume.appendChild(pAlcoholeByVolumeNode);
     pTagVolume.appendChild(pVolumeNode);
@@ -75,7 +86,6 @@ function getBeerInfo(data) {
     pTagIngredients.appendChild(pIngredientsNode);
     pTagFoodPairing.appendChild(pFoodPairingNode);
     pTagBrewersTips.appendChild(pBrewersTipsNode);
-
 
     const divBeerName = document.createElement('div');
     divBeerName.classList.add('beerName');
@@ -95,11 +105,16 @@ function getBeerInfo(data) {
     divBrewersTips.classList.add('brewersTips');
 
     divBeerName.appendChild(h2Tag);
+    divAlcoholByVolume.appendChild(h3abv);
     divAlcoholByVolume.appendChild(pTagAlcoholeByVolume);
+    divVolume.appendChild(h3Volume);
     divVolume.appendChild(pTagVolume);
     divBeerDesc.appendChild(pTagDescription);
+    divBeerInfo.appendChild(h3BeerInfo);
     divBeerInfo.appendChild(pTagIngredients);
+    divfoodPairing.appendChild(h3FoodPairing);
     divfoodPairing.appendChild(pTagFoodPairing);
+    divBrewersTips.appendChild(h3BrewersTips);
     divBrewersTips.appendChild(pTagBrewersTips);
 
     detailsElement.appendChild(beerImg)
