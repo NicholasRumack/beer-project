@@ -9,7 +9,6 @@
 .beerLogo{
   width: 10rem;
   height: 10rem;
-  padding-right: 5rem;
 }
 
 .gridHeader{
@@ -335,9 +334,9 @@ footer p {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(5, auto);
-    margin: 70px;
+    margin: 2rem;
     padding: 2rem;
-    min-height: 25rem;
+    column-gap: 20rem;
   }
   .beerImg {
     grid-column: 3/4;
