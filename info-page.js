@@ -7,26 +7,23 @@ const url = `${api}/${id}`;
 getData(url, getBeerInfo)
 
 function getData(url, callback) {
-    
     fetch(url)
     .then(res => res.json())
     .then(data => {
         callback(data);
     })
     .catch(error => console.log(error));
-    
 }
 
 function getBeerInfo(data) {
     const beer = data[0];
-    //console.log(beer)
+
     let str = beer.name;
     let ingredientsInfo = beer.ingredients
     let hopsIn = ingredientsInfo.hops
 
     for (let i = 0; i < hopsIn.length; i++) {
         const hopsInfo = hopsIn[i];
-        //console.log(hopsIn)
 
         let hops = "Hops: " + `${hopsInfo.name}: ${hopsInfo.amount.value}: ${hopsInfo.amount.unit}`;
         pTagHops  = document.createElement('p');
@@ -34,22 +31,31 @@ function getBeerInfo(data) {
         pTagHops.appendChild(pHopsNode);
     }
 
-    let volumeIn = beer.boil_volume;
-    for (let i = 0; i < volumeIn.length; i++) {
-        const volumeInfo = volumeIn[i];
-        let volume = `${volumeInfo.name}: ${volumeInfo.amount.value}`;
-        console.log(volume)
-    }
-    
+    let bVolume = beer.boil_volume
+    let volume = 'Volume: ' + bVolume.value + " " + bVolume.unit;
+
     const pElement = document.createElement('p');
     pElement.innerText = str;
 
-
+console.log(beer)
     const abv = "Alcohol by volume: " + beer.abv +"%";
-    const volume = "Volume: " + beer.boil_volume;
-    const hops = "Hops: " + beer.hops;
     const description = beer.description;
-    const ingredients = "Ingredients: " + beer.ingredients;
+    let ingredients = "Ingredients: ";  
+    
+
+    ingredients += 'Hops: '
+    for (let i = 0; i < beer.ingredients.hops.length; i++) {
+        const hop = beer.ingredients.hops[i];
+        ingredients += hop.name + ", ";
+        
+    }
+
+    ingredients += 'Malt: '
+    for (let i = 0; i < beer.ingredients.malt.length; i++) {
+        const m = beer.ingredients.malt[i];
+        ingredients += m.name + ", ";
+        
+    }
     const food_pairing = "Food pairing: " + beer.food_pairing;
     const brewers_tips = "Brewers tips: " + beer.brewers_tips;
     beerImg = new Image (54.4, 212.2);
