@@ -47,7 +47,7 @@ function getBeerInfo(data) {
     const abv = "Alcohol by volume: " + beer.abv;
     const volume = "Volume: " + beer.volume;
     const hops = "Hops: " + beer.hops;
-    const description = "Description: " + beer.description;
+    const description = beer.description;
     const ingredients = "Ingredients: " + beer.ingredients;
     const food_pairing = "Food pairing: " + beer.food_pairing;
     const brewers_tips = "Brewers tips: " + beer.brewers_tips;
