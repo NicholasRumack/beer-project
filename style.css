@@ -197,7 +197,6 @@ footer p {
 #searchresults{
   margin: 2rem 2rem 2rem 2rem;
   grid-area: b;
-  display: flex row;
   column-count: 2;
   min-height: 300px;
 }
