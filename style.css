@@ -9,7 +9,7 @@
 .beerLogo{
   width: 10rem;
   height: 10rem;
-  margin: auto;
+  padding-right: 5rem;
 }
 
 .gridHeader{
